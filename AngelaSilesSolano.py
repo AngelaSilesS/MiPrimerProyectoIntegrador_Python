@@ -30,16 +30,10 @@ def adivina_la_palabra():
         print(f"Letras incorrectas: {', '.join(letras_incorrectas)}")
         print(f"Número de vidas sobrantes: {vidas}")
       
-        salir = input("\nSi desea abandonar la partida, escriba 'salir'. Sino, presione Enter para continuar la partida: ").lower()
-        if salir == "salir":
-            print("¡Lo intentó muy bien! ¡Nos vemos pronto!")
-            break
-
-        letra = input("Ingrese la letra de su interés: ").lower()
-
-        if not letra or letra.isspace():
-            print("La entrada no es válida. Por favor, intente nuevamente (solo cadena de texto, y sin vacíos).")
-            continue
+        letra = input("Ingrese la letra de su interés: ").strip().lower() 
+        if not letra.isalpha():
+           print("La entrada no es válida. Por favor, intente nuevamente (solo letras y sin vacíos).")
+           continue
 
         if len(letra) != 1:
             print("Tiene permitido ingresar solo UNA letra, intente de nuevo.")

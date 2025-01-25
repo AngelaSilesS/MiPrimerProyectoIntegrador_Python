@@ -1,5 +1,4 @@
 import random
-
 def bienvenido(func):
     def wrapper(*args, **kwargs):
         print("\n" + "-" * 50)
@@ -34,19 +33,15 @@ def adivina_la_palabra():
         if not letra.isalpha():
            print("\nLa entrada no es válida. Por favor, intente nuevamente (solo letras y sin vacíos).")
            continue
-
         if len(letra) != 1:
             print("Tiene permitido ingresar solo UNA letra, intente de nuevo.")
             continue
-
         if letra in letras_correctas or letra in letras_incorrectas:
             print("Esa letra ya fue ingresada, intente con una diferente.")
             continue
-
         if letra in palabra:
             print(f"¡Maravilloso! '{letra}' está en la palabra por adivinar.")
             letras_correctas.append(letra)
-
             secret = [
                 letra if palabra[i] == letra else secret[i]
                 for i in range(len(palabra))
@@ -58,7 +53,6 @@ def adivina_la_palabra():
             print(f"Lamentablemente '{letra}' no está en la palabra del juego.")
             letras_incorrectas.append(letra)
             vidas -= 1
-
     if vidas == 0:
         print("\nLo lamento, se agotaron sus oportunidades y se quedó sin vidas. La palabra correcta era:", palabra)
 

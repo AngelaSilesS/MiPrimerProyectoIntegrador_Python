@@ -9,7 +9,7 @@ def bienvenido(func):
 
 @bienvenido
 def mensaje_de_inicio():
-    print("Qué gusto tenerte en este juego interactivo llamado: Adivina la Palabra.🎉\n En esta categoría las palabras por adivinar son referentes a algunas de las provincias de Costa Rica.🌎")
+    print("Qué gusto tenerte en este juego interactivo llamado: Adivina la Palabra.🎉\nEn esta categoría, las palabras por adivinar están relacionadas a algunas de las provincias de Costa Rica.🌎")
     print("¿Listo para poner a prueba tus conocimientos de Geografía Internacional?\n \t Comencemos...")
 
 def palabra_secreta():
@@ -78,4 +78,4 @@ def active_game ():
     adivina_la_palabra()
     jugar_nuevamente()
 
-active_game()
+active_game ()

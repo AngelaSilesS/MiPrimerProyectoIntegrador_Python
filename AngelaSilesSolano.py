@@ -2,9 +2,9 @@ import random
 
 def bienvenido(func):
     def wrapper(*args, **kwargs):
-        print("\n" + "-" * 32)
+        print("\n" + "-" * 50)
         func(*args, **kwargs)
-        print("_" * 32 + "\n")
+        print("_" * 50 + "\n")
     return wrapper
 
 @bienvenido
@@ -32,7 +32,7 @@ def adivina_la_palabra():
       
         letra = input("Ingrese la letra de su interés: ").strip().lower() 
         if not letra.isalpha():
-           print("La entrada no es válida. Por favor, intente nuevamente (solo letras y sin vacíos).")
+           print("\nLa entrada no es válida. Por favor, intente nuevamente (solo letras y sin vacíos).")
            continue
 
         if len(letra) != 1:
@@ -73,7 +73,9 @@ def jugar_nuevamente():
             break
         else:
             print("Nuevamente, ingrese 's' para sí o 'n' para no y abandonar la partida.")
-
-if __name__ == "__main__":
+@bienvenido
+def active_game ():
     adivina_la_palabra()
     jugar_nuevamente()
+
+active_game()
